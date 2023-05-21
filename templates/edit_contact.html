@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+    <title>Editar Contacto</title>
+</head>
+<body>
+    <h1>Editar Contacto</h1>
+    <form method="POST" action="{{ url_for('edit_contact', contact_id=contact['id']) }}">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" value="{{ contact['name'] }}" required><br>
+        <label for="phone">Teléfono:</label>
+        <input type="text" id="phone" name="phone" value="{{ contact['phone'] }}" required><br>
+        <input type="submit" value="Guardar">
+    </form>
+</body>
+</html>
